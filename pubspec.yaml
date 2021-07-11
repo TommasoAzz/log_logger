@@ -1,6 +1,8 @@
 name: log_logger
 description: Wrapper of the logger library available on pub.dev
 version: 1.0.0
+homepage: https://github.com/TommasoAzz/log_logger
+issue_tracker: https://github.com/TommasoAzz/log_logger/issues
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
