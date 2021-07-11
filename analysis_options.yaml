@@ -1,0 +1,26 @@
+include: package:pedantic/analysis_options.yaml
+
+linter:
+  rules:
+    prefer_single_quotes: false
+    avoid_shadowing_type_parameters: false
+    await_only_futures: true
+    omit_local_variable_types: false
+    unnecessary_const: false
+    always_require_non_null_named_parameters: false
+    prefer_final_fields: false
+    missing_return: true
+    unused_local_variables: true
+    prefer_if_null_operators: true
+    unused_field: false
+    unawaited_futures: false
+    prefer_conditional_assignment: true
+    unnecessary_this: true
+    unnecessary_null_in_if_null_operators: true
+    annotate_overrides: false
+
+analyzer:
+  errors:
+    invalid_assignment: warning
+    missing_return: error
+    dead_code: info
