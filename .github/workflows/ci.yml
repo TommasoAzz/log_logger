@@ -1,0 +1,26 @@
+name: Unit Test
+on: [push, pull_request]
+jobs:
+  static_analysis:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1.5.3
+        with:
+          flutter-version: 2.2.3
+          channel: "stable"
+      - name: "Downloading dependencies"
+        run: flutter pub get
+      - name: "Static analysis"
+        run: flutter analyze
+  test:
+    runs-on: ubuntu-20.04
+    needs: static_analysis
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1.5.3
+        with:
+          flutter-version: 2.2.3
+          channel: "stable"
+      - name: "Test execution"
+        run: "flutter test --coverage"
