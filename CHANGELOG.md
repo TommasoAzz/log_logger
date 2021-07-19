@@ -1,3 +1,7 @@
+## 1.0.0+1
+
+* Improved pub.dev score by providing more documentation and formatting.
+
 ## 1.0.0
 
 * Published the library with all the features.

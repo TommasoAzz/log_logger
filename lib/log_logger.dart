@@ -58,7 +58,8 @@ class LogLogger {
   ///
   /// Otherwise nothing gets done.
   static void removeLogger(final String label) {
-    if (_registeredLoggers.containsKey(label) && _registeredLoggers[label] != null) {
+    if (_registeredLoggers.containsKey(label) &&
+        _registeredLoggers[label] != null) {
       _registeredLoggers[label]!.close();
       _registeredLoggers.remove(label);
     }
@@ -72,10 +73,16 @@ class LogLogger {
       throw ArgumentError("The path of the file cannot be empty.");
     }
     if (await Directory(path).exists()) {
-      print('[LogLogger]: The directory in which the debug log file will be saved is $path.');
+      print(
+        '[LogLogger]: The directory in which the debug log file will be saved is $path.',
+      );
       _debugFileDirectory = path;
     } else {
-      throw ArgumentError.value(path, 'path', 'It is not a valid path (it does not exist)');
+      throw ArgumentError.value(
+        path,
+        'path',
+        'It is not a valid path (it does not exist)',
+      );
     }
   }
 
@@ -88,7 +95,9 @@ class LogLogger {
     if (path.isEmpty) {
       throw ArgumentError("The path of the file cannot be empty.");
     }
-    print('[LogLogger]: The directory in which the debug log file will be saved is $path.');
+    print(
+      '[LogLogger]: The directory in which the debug log file will be saved is $path.',
+    );
     _debugFileDirectory = path;
   }
 
@@ -101,7 +110,9 @@ class LogLogger {
     if (debugFileName.isEmpty) {
       throw ArgumentError("The name of the file cannot be empty.");
     }
-    print('[LogLogger]: The name of the debug log file will be $debugFileName.');
+    print(
+      '[LogLogger]: The name of the debug log file will be $debugFileName.',
+    );
     _debugFileName = debugFileName;
     _debugFile = File('$_debugFileDirectory/$_debugFileName');
   }
@@ -111,7 +122,10 @@ class LogLogger {
   ///
   /// Throws an [ArgumentError] is [path] or [debugFileName] are empty or
   /// if [path] is not existent.
-  static Future<void> setDebugFile(final String path, final String fileName) async {
+  static Future<void> setDebugFile(
+    final String path,
+    final String fileName,
+  ) async {
     await _setDebugFileDirectory(path);
     _setDebugFileName(fileName);
   }
@@ -148,11 +162,15 @@ class LogLogger {
   /// the debug mode does not get set.
   static set debugMode(final bool newMode) {
     if (_debugMode == newMode) {
-      print('[LogLogger]: The debug mode is already ${newMode ? 'enabled' : 'disabled'}.');
+      print(
+        '[LogLogger]: The debug mode is already ${newMode ? 'enabled' : 'disabled'}.',
+      );
       return;
     }
 
-    print('[LogLogger]: The file path is ${_filePathIsCorrect ? "" : "not "}correctly formed.');
+    print(
+      '[LogLogger]: The file path is ${_filePathIsCorrect ? "" : "not "}correctly formed.',
+    );
 
     if (newMode && !_filePathIsCorrect) {
       throw DebugFileNotSetException(
@@ -184,14 +202,19 @@ class LogLogger {
   /// Erases the content of the log file.
   static Future<void> clearFile() async {
     await _debugFile.writeAsString("");
-    print("[LogLogger]: The log file $_debugFileName was cleared and it is now empty.");
+    print(
+      "[LogLogger]: The log file $_debugFileName was cleared and it is now empty.",
+    );
   }
 
   /// Returns `true` if the debug file is empty, `false` otherwise.
   static Future<bool> get logFileIsEmpty async {
-    final content = (await _debugFile.exists()) ? (await _debugFile.readAsString()) : "";
+    final exists = await _debugFile.exists();
+    final content = exists ? (await _debugFile.readAsString()) : "";
 
-    print("[LogLogger]: The log file is ${content.isNotEmpty ? 'not ' : ''}empty.");
+    print(
+      "[LogLogger]: The log file is ${content.isNotEmpty ? 'not ' : ''}empty.",
+    );
     return content.isEmpty;
   }
 

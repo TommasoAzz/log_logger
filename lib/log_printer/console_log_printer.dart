@@ -1,4 +1,4 @@
-import 'package:logger/logger.dart' show LogEvent, LogPrinter, PrettyPrinter, Level;
+import 'package:logger/logger.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 /// Printer to use in the [printer] field of `Logger` when instantiated.

@@ -1,5 +1,6 @@
 import 'package:logger/logger.dart' as lib;
 
+/// Wrapper of `Logger` of `logger` library.
 class Logger {
   final lib.Logger _logger;
 
