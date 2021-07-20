@@ -1,3 +1,7 @@
+## 1.0.0+2
+
+* Dropped Flutter dependency.
+
 ## 1.0.0+1
 
 * Improved pub.dev score by providing more documentation and formatting.

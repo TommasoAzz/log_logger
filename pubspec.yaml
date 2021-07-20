@@ -1,23 +1,18 @@
 name: log_logger
 description: Wrapper of the logger library available on pub.dev that enables also easy file logging.
-version: 1.0.0+1
+version: 1.0.0+2
 homepage: https://github.com/TommasoAzz/log_logger
 issue_tracker: https://github.com/TommasoAzz/log_logger/issues
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
-  
   logger: ^1.0.0
   synchronized: ^3.0.0
   intl: ^0.17.0
   path: ^1.8.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test: ^1.17.10
   test_process: ^2.0.2

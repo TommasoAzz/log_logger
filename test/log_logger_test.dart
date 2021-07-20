@@ -4,7 +4,7 @@ import 'package:log_logger/log_logger.dart';
 import 'package:log_logger/logger_level.dart';
 import 'package:path/path.dart' show join;
 
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:test_process/test_process.dart';
 
 /// File path fixer.
