@@ -12,12 +12,12 @@ class ConsoleLogPrinter extends LogPrinter {
   /// Emojis to be printed to graphically show the gravity of the log message.
   static const Map<Level, String> levelEmojis = {
     Level.nothing: '  ',
-    Level.verbose: '💬 ',
-    Level.debug: '🐛 ',
+    Level.verbose: '💬',
+    Level.debug: '🐛',
     Level.info: '💡 ',
-    Level.warning: '⚠️ ',
-    Level.error: '⛔ ',
-    Level.wtf: '👾 ',
+    Level.warning: '⚠️',
+    Level.error: '⛔',
+    Level.wtf: '👾',
   };
 
   /// Label for the log line.
