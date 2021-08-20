@@ -1,6 +1,6 @@
 name: log_logger
 description: Wrapper of the logger library available on pub.dev that enables also easy file logging.
-version: 1.0.0+2
+version: 1.0.0+3
 homepage: https://github.com/TommasoAzz/log_logger
 issue_tracker: https://github.com/TommasoAzz/log_logger/issues
 

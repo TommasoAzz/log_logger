@@ -1,3 +1,8 @@
+## 1.0.0+3
+
+* Updated dependencies.
+* Updated icons alignment in `ConsoleLogPrinter`.
+
 ## 1.0.0+2
 
 * Dropped Flutter dependency.
