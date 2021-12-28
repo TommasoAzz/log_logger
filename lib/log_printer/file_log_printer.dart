@@ -6,7 +6,7 @@ import 'package:intl/intl.dart' show DateFormat;
 /// Like the name says, it's to be used when printing logs into a file. It can be also used for printing into console.
 class FileLogPrinter extends LogPrinter {
   /// Date format to be used.
-  static const String _date_format = 'dd/MM/yy HH:mm:ss';
+  static const String _dateFormat = 'dd/MM/yy HH:mm:ss';
 
   /// Labels to be printed to show the gravity of the log message.
   static const Map<Level, String> _level = {
@@ -28,7 +28,7 @@ class FileLogPrinter extends LogPrinter {
   @override
   List<String> log(final LogEvent event) {
     return [
-      '[${_level[event.level]}] [${DateFormat(_date_format).format(DateTime.now())} -- $label]:\t${event.message}',
+      '[${_level[event.level]}] [${DateFormat(_dateFormat).format(DateTime.now())} -- $label]:\t${event.message}',
     ];
   }
 }

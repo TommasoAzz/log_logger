@@ -7,7 +7,7 @@ import 'package:intl/intl.dart' show DateFormat;
 /// It's not great to be used for writing to file due to the emojis and colors.
 class ConsoleLogPrinter extends LogPrinter {
   /// Date format to be used.
-  static const String _date_format = 'dd/MM/yy HH:mm:ss';
+  static const String _dateFormat = 'dd/MM/yy HH:mm:ss';
 
   /// Emojis to be printed to graphically show the gravity of the log message.
   static const Map<Level, String> levelEmojis = {
@@ -36,7 +36,7 @@ class ConsoleLogPrinter extends LogPrinter {
 
     return [
       color(
-        '$emoji [${DateFormat(_date_format).format(DateTime.now())} -- $label]:\t${event.message}',
+        '$emoji [${DateFormat(_dateFormat).format(DateTime.now())} -- $label]:\t${event.message}',
       )
     ];
   }

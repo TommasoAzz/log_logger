@@ -1,7 +1,6 @@
 import 'dart:io' show Directory, File;
 import 'package:log_logger/exception/debug_file_not_set_exception.dart';
 import 'package:log_logger/log_logger.dart';
-import 'package:log_logger/logger_level.dart';
 import 'package:path/path.dart' show join;
 
 import 'package:test/test.dart';
