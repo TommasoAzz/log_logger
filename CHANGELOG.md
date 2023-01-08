@@ -1,3 +1,7 @@
+## 1.0.0+5
+
+* Updated dependencies.
+
 ## 1.0.0+4
 
 * Updated dependencies.
